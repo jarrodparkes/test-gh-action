@@ -10,7 +10,7 @@ jobs:
         uses: AryeoHQ/gh-action-calver-to-semver-release@1.0.0
         with:
           calver: 2020-07-02
-          calver-count: 1
+          calver-count: 2
           latest-semver: 1.0.3
       - run: |
           echo semver ${{ steps.calver-to-semver-release.outputs.semver }}
