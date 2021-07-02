@@ -1,14 +1,19 @@
 on: [push]
 
 jobs:
-  hello_world_job:
+  test_job:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: Try CalVer to SemVer Release
     steps:
       - uses: actions/checkout@v2
-      - id: foo
-        uses: AryeoHQ/gh-action-calver-to-semver@1.0.0
+      - id: calver-to-semver-release
+        uses: AryeoHQ/gh-action-calver-to-semver-release@1.0.0
         with:
-          who-to-greet: "Mona the Octocat"
-      - run: echo random-number ${{ steps.foo.outputs.random-number }}
+          calver: 2020-07-02
+          count-calver: 1
+          owner: AryeoHQ
+          repo: aryeo-api-swift-sdk-private
+      - run: |
+          echo semver ${{ steps.calver-to-semver-release.outputs.semver }}
+          echo notes ${{ steps.calver-to-semver-release.outputs.notes }}
         shell: bash
