@@ -11,8 +11,7 @@ jobs:
         with:
           calver: 2020-07-02
           count-calver: 1
-          owner: AryeoHQ
-          repo: aryeo-api-swift-sdk-private
+          latest-semver: 1.0.3
       - run: |
           echo semver ${{ steps.calver-to-semver-release.outputs.semver }}
           echo notes ${{ steps.calver-to-semver-release.outputs.notes }}
