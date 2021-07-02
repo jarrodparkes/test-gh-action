@@ -7,16 +7,16 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - id: foo-1
-        uses: AryeoHQ/gh-action-calver-to-semver-release@1.0.0
-        with:
-          calver: 2020-07-02
-          calver-count: 1
-          latest-semver: 1.0.3
-      - run: |
-          echo semver ${{ steps.foo-1.outputs.semver }}
-          echo notes ${{ steps.foo-1.outputs.notes }}
-        shell: bash
+      # - id: foo-1
+      #   uses: AryeoHQ/gh-action-calver-to-semver-release@1.0.0
+      #   with:
+      #     calver: 2020-07-02
+      #     calver-count: 1
+      #     latest-semver: 1.0.3
+      # - run: |
+      #     echo semver ${{ steps.foo-1.outputs.semver }}
+      #     echo notes ${{ steps.foo-1.outputs.notes }}
+      #   shell: bash
 
       - id: foo-2
         uses: AryeoHQ/gh-action-calver-to-semver-release@1.0.0
@@ -29,13 +29,13 @@ jobs:
           echo notes ${{ steps.foo-2.outputs.notes }}
         shell: bash
 
-      - id: foo-3
-        uses: AryeoHQ/gh-action-calver-to-semver-release@1.0.0
-        with:
-          calver: 2020-07-02
-          calver-count: 1
-          latest-semver:
-      - run: |
-          echo semver ${{ steps.foo-3.outputs.semver }}
-          echo notes ${{ steps.foo-3.outputs.notes }}
-        shell: bash
+      # - id: foo-3
+      #   uses: AryeoHQ/gh-action-calver-to-semver-release@1.0.0
+      #   with:
+      #     calver: 2020-07-02
+      #     calver-count: 1
+      #     latest-semver:
+      # - run: |
+      #     echo semver ${{ steps.foo-3.outputs.semver }}
+      #     echo notes ${{ steps.foo-3.outputs.notes }}
+      #   shell: bash
