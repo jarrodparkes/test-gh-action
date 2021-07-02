@@ -14,10 +14,6 @@ jobs:
           calver-count: 1
           latest-semver: 1.0.3
 
-      - run: |
-          echo semver ${{ steps.one.outputs.semver }}
-          echo notes ${{ steps.one.outputs.notes }}
-
       - id: two
         uses: AryeoHQ/gh-action-calver-to-semver-release@1.0.0
         with:
@@ -25,15 +21,19 @@ jobs:
           calver-count: 2
           latest-semver: 1.0.3
 
-      - run: |
-          echo semver ${{ steps.two.outputs.semver }}
-          echo notes ${{ steps.two.outputs.notes }}
-
       - id: three
         uses: AryeoHQ/gh-action-calver-to-semver-release@1.0.0
         with:
           calver: 2020-07-02
           calver-count: 1
+
+      - run: |
+          echo semver ${{ steps.one.outputs.semver }}
+          echo notes ${{ steps.one.outputs.notes }}
+
+      - run: |
+          echo semver ${{ steps.two.outputs.semver }}
+          echo notes ${{ steps.two.outputs.notes }}
 
       - run: |
           echo semver ${{ steps.three.outputs.semver }}
